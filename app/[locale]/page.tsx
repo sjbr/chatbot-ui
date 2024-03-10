@@ -1,11 +1,17 @@
 "use client"
 
-import { ChatbotUISVG } from "@/components/icons/chatbotui-svg"
-import { IconArrowRight } from "@tabler/icons-react"
-import { useTheme } from "next-themes"
-import Link from "next/link"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
 
 export default function HomePage() {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push("/login")
+  }, [])
+
+  return null
+  /*
   const { theme } = useTheme()
 
   return (
@@ -24,5 +30,5 @@ export default function HomePage() {
         <IconArrowRight className="ml-1" size={20} />
       </Link>
     </div>
-  )
+  )*/
 }
