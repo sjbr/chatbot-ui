@@ -7,6 +7,7 @@ import { FC, useContext, useEffect, useRef } from "react"
 import { Button } from "../ui/button"
 import { ChatSettingsForm } from "../ui/chat-settings-form"
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover"
+import { log } from "console"
 
 interface ChatSettingsProps {}
 
@@ -31,6 +32,10 @@ export const ChatSettings: FC<ChatSettingsProps> = ({}) => {
   }
 
   useEffect(() => {
+    log("chatSettings", { chatSettings })
+    log("models", { models })
+    log("availableHostedModels", { availableHostedModels })
+
     if (!chatSettings) return
 
     setChatSettings({
